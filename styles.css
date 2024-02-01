@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+:root {
+    --bg--clr: hsla(200, 27%, 70%, 1);
+    --cardBg--clr: hsla(100, 0%, 10%, 1);
+    --text--clr: #fff;
+    --rate--clr: hsla(40, 59%, 50%, 1)
+}
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background: var(--bg--clr);
+    color: var(--text--clr);
+}
+
+span {
+    display: inline-block;
+}
+
+#rev--con {
+    /* border: 2px solid red; */
+    width: 100%;
+    padding: 6rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
+    gap: 1.5rem 0;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card {
+    max-width: 300px;
+    /* border: 2px solid green; */
+    padding: 1.5rem;
+    background: var(--cardBg--clr);
+    border-radius: 15px;
+}
+
+.card--4 {
+    animation: fadeIn 2s ease-in forwards;
+
+}
+.card--1{
+    animation: slideLeftIn  2s ease-in-out forwards;
+}
+
+.card--2{
+    animation: slideTopIn  2s ease-in-out forwards;
+
+}
+.card--3{
+    animation: rotateZoomOut  600ms ease-in-out forwards;
+
+}
+
+ion-icon {
+    color: var(--rate--clr);
+    font-size: 20px;
+}
+
+.cust--name {
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+.card--subLevel-1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cust--img {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    overflow: hidden;
+    align-self: top;
+}
+
+.cust--img>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rev--title {
+    margin-top: 1rem;
+}
+
+.cust--comment {
+    font-size: 14px;
+    margin-top: 0.5rem;
+    word-wrap: break-word;
+    word-break: break-all;
+    line-height: 18px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeftIn {
+    from{
+        margin-left: -150%;
+    }
+    to{
+        margin-left: 0;
+    }
+}
+@keyframes slideTopIn {
+    from{
+       transform: translate(0 ,-300px);
+    }
+
+}
+@keyframes rotateZoomOut {
+    0%{
+        transform:  rotate(60deg)  scale(0);
+    }
+
+    20%{
+        transform: rotate(100deg) scale(0.2);
+    }
+    40%{
+        transform: rotate(150deg) scale(0.4);
+
+    }
+    60%{
+        transform: rotate(220deg) scale(0.5);
+    }
+    80%{
+        transform: rotate(300deg) scale(0.8);
+    }
+    100%{
+        transform: rotate(360deg) scale(1);
+    }
+}
